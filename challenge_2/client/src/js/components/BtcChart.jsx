@@ -12,7 +12,7 @@ class BtcChart extends Component {
 
   handleDate() {
     const { last30Days } = this.props;
-    const pastDates = Object.keys(last30Days.bpi);
+    const pastDates = Object.keys(last30Days);
     return pastDates;
   }
 
@@ -21,7 +21,7 @@ class BtcChart extends Component {
     const dates = this.handleDate();
     const data = [];
     dates.forEach((elem) => {
-      data.push(last30Days.bpi[elem]);
+      data.push(last30Days[elem]);
     });
     return data;
   }
@@ -47,5 +47,9 @@ class BtcChart extends Component {
     );
   }
 }
+
+BtcChart.propTypes = {
+  last30Days: PropTypes.objectOf(PropTypes.number).isRequired,
+};
 
 export default BtcChart;

@@ -15,7 +15,7 @@ class App extends Component {
     axios.get('https://api.coindesk.com/v1/bpi/historical/close.json') // last 31 days' worth data
       .then((res) => {
         console.log(res);
-        currentThis.setState({ data: res.data });
+        currentThis.setState({ data: res.data.bpi });
       })
       .catch((err) => {
         console.log(err);
