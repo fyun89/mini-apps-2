@@ -1,0 +1,7 @@
+## MacOS
+.DS_Store
+
+##npm packages
+node_modules
+
+##webpack default output folder
