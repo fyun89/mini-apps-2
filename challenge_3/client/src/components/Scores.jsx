@@ -13,23 +13,50 @@ class Scores extends Component {
     return (
       <div className="scoreboard">
         {rounds.map((elem, i) => (
-          <div className="row" key={generateKey(i)}>
-            <li id="1" className="rounds">
-              <ul className="outer">
-                <p className="firstScore">
-                  {elem.first || 0}
-                </p>
-                <ul className="inner">
-                  <p className="secondScore">
-                    {elem.second || 0}
+          i < 9
+            ? (
+              <div className="row" key={generateKey(i)}>
+                <li className="rounds">
+                  <ul className="outer">
+                    <p className="firstScore">
+                      {elem.first || 0}
+                    </p>
+                    <ul className="inner">
+                      <p className="secondScore">
+                        {elem.second || 0}
+                      </p>
+                    </ul>
+                    <p className="roundTotal">
+                      { elem.first + elem.second }
+                    </p>
+                  </ul>
+                </li>
+              </div>
+            )
+            : (
+              <li key={generateKey(i)} className="lastRound">
+                <ul className="lastOuter">
+                  <ul className="lastInner1">
+                    <p className="lastFirstScore">
+                      {elem.first || 0}
+                    </p>
+                  </ul>
+                  <ul className="lastInner2">
+                    <p className="lastSecondScore">
+                      {elem.second || 0}
+                    </p>
+                  </ul>
+                  <ul className="lastInner3">
+                    <p className="lastThirdScore">
+                      {elem.third || 0}
+                    </p>
+                  </ul>
+                  <p className="lastRoundTotal">
+                    { elem.first + elem.second + elem.third }
                   </p>
                 </ul>
-                <p className="roundTotal">
-                  { elem.first + elem.second }
-                </p>
-              </ul>
-            </li>
-          </div>
+              </li>
+            )
         ))}
       </div>
     );

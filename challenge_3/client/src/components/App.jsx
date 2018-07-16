@@ -58,6 +58,7 @@ class App extends Component {
           round: 10,
           first: 0,
           second: 0,
+          third: 0,
         },
       ],
     };
