@@ -7,20 +7,17 @@ class Scores extends Component {
     this.state = {
       grandTotal: 0,
     };
-    //this.handleCalculate = this.handleCalculate.bind(this)
   }
 
   componentDidUpdate() {
     let value = 0;
-    let { grandTotal } = this.state
-    console.log('componentdidupdate')
+    const { grandTotal } = this.state;
     document.querySelectorAll('.roundTotal').forEach((elem) => {
       value += Number(elem.innerHTML);
     });
     document.querySelectorAll('.lastRoundTotal').forEach((elem) => {
       value += Number(elem.innerHTML);
     });
-    //return value;
     if (grandTotal !== value) {
       this.setState({ grandTotal: value });
     }

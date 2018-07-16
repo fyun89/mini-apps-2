@@ -26,9 +26,13 @@ class Buttons extends Component {
           <div onClick={this.handleClick} className="grid-item btn7">7</div>
           <div onClick={this.handleClick} className="grid-item btn8">8</div>
           <div onClick={this.handleClick} className="grid-item btn9">9</div>
-          <div className="grid-item btnClr">Clr</div>
+          <div className="grid-item btnClr">
+            Clr
+          </div>
           <div onClick={this.handleClick} className="grid-item btn10">10</div>
-          <div className="grid-item btnEnt">Ent</div>
+          <div className="grid-item btnEnt">
+            Ent
+          </div>
         </div>
       </div>
     );

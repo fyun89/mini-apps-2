@@ -73,7 +73,6 @@ class App extends Component {
       if (turn === 1) {
         const pastRoundInfo = rounds;
         pastRoundInfo[currentRound - 1].first = e;
-        console.log('triggered round 1-9 turn 1')
         this.setState({
           rounds: pastRoundInfo,
           turn: turn + 1,
@@ -81,7 +80,6 @@ class App extends Component {
       } else {
         const pastRoundInfo = rounds;
         pastRoundInfo[currentRound - 1].second = e;
-        console.log('triggered round 1-9 turn 2')
         this.setState({
           rounds: pastRoundInfo,
           turn: 1,
@@ -92,7 +90,6 @@ class App extends Component {
       if (turn === 1) {
         const pastRoundInfo = rounds;
         pastRoundInfo[currentRound - 1].first = e;
-        console.log('triggered round 10 turn 1')
         this.setState({
           rounds: pastRoundInfo,
           turn: turn + 1,
@@ -100,7 +97,6 @@ class App extends Component {
       } else if (turn === 2) {
         const pastRoundInfo = rounds;
         pastRoundInfo[currentRound - 1].second = e;
-        console.log('triggered round 10 turn 2')
         this.setState({
           rounds: pastRoundInfo,
           turn: turn + 1,
@@ -108,7 +104,6 @@ class App extends Component {
       } else if ((rounds[9].first === 10 || rounds[9].second === 10) && turn === 3) {
         const pastRoundInfo = rounds;
         pastRoundInfo[currentRound - 1].third = e;
-        console.log('triggered round 10 turn 3')
         this.setState({
           rounds: pastRoundInfo,
           turn: 1,
