@@ -1,69 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Scores extends Component {
   constructor() {
     super();
-    this.state = {
-      rounds: [
-        {
-          round: 1,
-          first: 0,
-          second: 0,
-        },
-        {
-          round: 2,
-          first: 0,
-          second: 0,
-        },
-        {
-          round: 3,
-          first: 0,
-          second: 0,
-        },
-        {
-          round: 4,
-          first: 0,
-          second: 0,
-        },
-        {
-          round: 5,
-          first: 0,
-          second: 0,
-        },
-        {
-          round: 6,
-          first: 0,
-          second: 0,
-        },
-        {
-          round: 7,
-          first: 0,
-          second: 0,
-        },
-        {
-          round: 8,
-          first: 0,
-          second: 0,
-        },
-        {
-          round: 9,
-          first: 0,
-          second: 0,
-        },
-        {
-          round: 10,
-          first: 0,
-          second: 0,
-        },
-      ],
-    };
+    this.state = {};
   }
 
   render() {
-    const { rounds } = this.state;
-    const generateKey = (pre) => {
-      return `${pre}_${new Date().getTime()}`;
-    };
+    const { rounds } = this.props;
+    const generateKey = pre => `${pre}_${new Date().getTime()}`;
     return (
       <div className="scoreboard">
         {rounds.map((elem, i) => (
@@ -89,5 +35,13 @@ class Scores extends Component {
     );
   }
 }
+
+Scores.propTypes = {
+  rounds: PropTypes.arrayOf(PropTypes.shape({
+    round: PropTypes.number,
+    first: PropTypes.number,
+    second: PropTypes.number,
+  })).isRequired,
+};
 
 export default Scores;
