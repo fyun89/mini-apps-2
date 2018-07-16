@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class Scores extends Component {
+class Buttons extends Component {
   constructor() {
     super();
     this.state = {};
@@ -8,8 +9,7 @@ class Scores extends Component {
   }
 
   handleClick(e) {
-    const {numButtonInput} = this.props;
-    console.log(Number(e.target.textContent));
+    const { numButtonInput } = this.props;
     numButtonInput(Number(e.target.textContent));
   }
 
@@ -26,14 +26,17 @@ class Scores extends Component {
           <div onClick={this.handleClick} className="grid-item btn7">7</div>
           <div onClick={this.handleClick} className="grid-item btn8">8</div>
           <div onClick={this.handleClick} className="grid-item btn9">9</div>
-          <div onClick={this.handleClick} className="grid-item btnClr">Clr</div>
+          <div className="grid-item btnClr">Clr</div>
           <div onClick={this.handleClick} className="grid-item btn10">10</div>
-          <div onClick={this.handleClick} className="grid-item btnEnt">Ent</div>
+          <div className="grid-item btnEnt">Ent</div>
         </div>
       </div>
     );
   }
 }
 
+Buttons.propTypes = {
+  numButtonInput: PropTypes.func.isRequired,
+};
 
-export default Scores;
+export default Buttons;

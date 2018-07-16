@@ -105,7 +105,7 @@ class App extends Component {
           rounds: pastRoundInfo,
           turn: turn + 1,
         });
-      } else if (turn === 3) {
+      } else if ((rounds[9].first === 10 || rounds[9].second === 10) && turn === 3) {
         const pastRoundInfo = rounds;
         pastRoundInfo[currentRound - 1].third = e;
         console.log('triggered round 10 turn 3')
@@ -128,7 +128,7 @@ class App extends Component {
           Bowling Scores
         </h1>
         <Scores rounds={rounds} />
-        <Buttons numButtonInput={this.handleClickNum} />
+        <Buttons rounds={rounds} numButtonInput={this.handleClickNum} />
       </div>
     );
   }
